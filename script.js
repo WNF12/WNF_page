@@ -57,3 +57,19 @@ if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
     card.addEventListener('mouseleave', ()=> card.style.transform = '');
   });
 }
+// === Carousel logic ===
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const prevBtn = carousel.querySelector('.prev');
+  const nextBtn = carousel.querySelector('.next');
+
+  const scrollAmount = () => track.querySelector('img').clientWidth + 16;
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+  });
+});

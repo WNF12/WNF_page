@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Design-Intensive Site</title>
+  <meta name="description" content="A modern, design-first starter with CSS + vanilla JS." />
+
+  <!-- Fonts (swap for your brand) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.9L18.18 22L12 18.77L5.82 22L7 14.17l-5-4.9l6.91-1.01L12 2z"/></svg>
+        <span>BrandName</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Menu</span>
+        ☰
+      </button>
+
+      <nav id="primary-nav" class="nav">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn--primary">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="section hero">
+      <div class="container grid grid--2">
+        <div class="stack">
+          <h1 class="display">Design that moves people.</h1>
+          <p class="lead">A crisp, accessible, performant site starter with theming, components, and tasteful motion.</p>
+          <div class="cluster">
+            <a class="btn btn--primary" href="#work">See Work</a>
+            <button class="btn btn--ghost" data-open-modal="#newsletter-modal">Join Newsletter</button>
+          </div>
+        </div>
+        <div class="hero-media">
+          <figure class="frame">
+            <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1200&auto=format&fit=crop" alt="Abstract geometric shapes" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK / CARDS -->
+    <section id="work" class="section">
+      <div class="container stack">
+        <h2>Selected Work</h2>
+        <div class="grid grid--3 cards">
+          <article class="card">
+            <img class="card__img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="City skyline at dusk" />
+            <div class="card__body">
+              <h3 class="card__title">Skyline Campaign</h3>
+              <p>Billboard to microsite: a cohesive visual story across mediums.</p>
+              <button class="chip" data-gallery="group1" data-img="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop">View</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card__img" src="https://images.unsplash.com/photo-1529336953121-adb2b66a73a3?q=80&w=1200&auto=format&fit=crop" alt="Minimalist desk setup" />
+            <div class="card__body">
+              <h3 class="card__title">Minimalist Brand</h3>
+              <p>Identity, packaging, and a highly performant landing page.</p>
+              <button class="chip" data-gallery="group1" data-img="https://images.unsplash.com/photo-1529336953121-adb2b66a73a3?q=80&w=2000&auto=format&fit=crop">View</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card__img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Laptop with code on screen" />
+            <div class="card__body">
+              <h3 class="card__title">Dev Hand‑off</h3>
+              <p>Design systems that engineers actually enjoy building.</p>
+              <button class="chip" data-gallery="group1" data-img="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop">View</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section--muted">
+      <div class="container grid grid--2">
+        <div class="stack">
+          <h2>About</h2>
+          <p>I craft elegant, accessible experiences. This starter uses semantic HTML, modern CSS (variables, grid, clamp), and tiny vanilla JS for interactions—so you can scale up later without a rewrite.</p>
+        </div>
+        <ul class="list-checks">
+          <li>Responsive from 320px → 1440px+</li>
+          <li>Dark mode ready</li>
+          <li>A11y‑first components</li>
+          <li>Production deploy in 2 minutes</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container stack">
+        <h2>Let’s build something</h2>
+        <form class="form" id="contact-form" netlify>
+          <div class="form__row">
+            <label for="name">Name</label>
+            <input id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form__row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="form__row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container cluster">
+      <small>© <span id="year"></span> BrandName</small>
+      <div class="cluster cluster--xs">
+        <a href="#" aria-label="Twitter" class="icon-link">𝕏</a>
+        <a href="#" aria-label="Instagram" class="icon-link">IG</a>
+        <a href="#" aria-label="LinkedIn" class="icon-link">in</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal (Newsletter) -->
+  <dialog id="newsletter-modal" class="modal">
+    <form method="dialog" class="modal__card">
+      <h3>Join the newsletter</h3>
+      <p>Monthly case studies, zero spam.</p>
+      <input type="email" placeholder="you@domain.com" required />
+      <menu class="cluster">
+        <button class="btn btn--ghost" value="cancel">Close</button>
+        <button class="btn btn--primary" value="submit">Subscribe</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <!-- Lightbox for gallery -->
+  <dialog id="lightbox" class="lightbox">
+    <img alt="" />
+    <button class="lightbox__close" aria-label="Close">×</button>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
